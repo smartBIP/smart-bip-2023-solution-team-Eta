@@ -1,0 +1,28 @@
+﻿@page "/"
+@using JFP.NewClient.Pages.Components
+@using JFP.NewClient.Pages.Reports.Components
+
+<PageTitle>Feedback</PageTitle>
+
+<div class="mx-5 my-5">
+    <MudFileUpload T="IBrowserFile" OnFilesChanged="UploadImages">
+        <ButtonTemplate>
+            <MudButton HtmlTag="label" Variant="Variant.Filled" Color="Color.Primary" StartIcon="@Icons.Material.Filled.CameraAlt" for="@context" FullWidth="true">
+                Upload Picture
+            </MudButton>
+        </ButtonTemplate>
+    </MudFileUpload>
+
+    @if (_isLoading)
+    {
+        <div class="d-flex justify-center mt-3">
+            <Spinner />
+        </div>
+    }
+
+    @if (_imageResponse is not null)
+    {
+        <Form Response="_imageResponse" Location="_location" />
+    }
+</div>
+

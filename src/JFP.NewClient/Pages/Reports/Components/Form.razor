@@ -1,0 +1,29 @@
+﻿<div class="mt-5">
+    <EditForm Model="_report" OnValidSubmit="HandleSubmit">
+        <div class="mb-5 d-flex justify-center">
+            <MudChipSet @bind-SelectedChip="_selected" Filter="true" Mandatory="true">
+                @foreach (MudChip chip in _categoryChips)
+                {
+                    <MudChip Color="@chip.Color" Value="@chip.Value" Text="@chip.Text" Default="@chip.Default">
+                        @chip.Text
+                    </MudChip>
+                }
+            </MudChipSet>
+        </div>
+
+        <MudTextField @bind-Value="@_report.Description" Label="Problem Description" Variant="Variant.Outlined" Lines="6" />
+        <MudSelect T="string" Label="Severity" Variant="Variant.Outlined" AnchorOrigin="Origin.BottomCenter" Class="mt-3" ValueChanged="HandleSelect">
+            <MudSelectItem T="string" Value="@("Low")" />
+            <MudSelectItem T="string" Value="@("Medium")" />
+            <MudSelectItem T="string" Value="@("High")" />
+        </MudSelect>
+        <MudTextField @bind-Value="@_report.Issuer" Label="Name of reporter (Optional)" Variant="Variant.Outlined" Class="mt-3" />
+
+        <MudButton StartIcon="@Icons.Material.Filled.Send" ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Success" FullWidth="true" Class="mt-3">
+            Send
+        </MudButton>
+        <MudButton StartIcon="@Icons.Material.Filled.Cancel" Variant="Variant.Filled" Color="Color.Error" FullWidth="true" Class="mt-3">
+            Cancel
+        </MudButton>
+    </EditForm>
+</div>

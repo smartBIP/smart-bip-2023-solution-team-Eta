@@ -1,0 +1,14 @@
+﻿@page "/"
+
+<PageTitle>Feedback</PageTitle>
+
+<div class="mx-5 my-5">
+    <MudFileUpload T="IBrowserFile" OnFilesChanged="UploadImages">
+        <ButtonTemplate>
+            <MudButton HtmlTag="label" Variant="Variant.Filled" Color="Color.Primary" StartIcon="@Icons.Material.Filled.CameraAlt" for="@context" FullWidth="true">
+                Upload Picture
+            </MudButton>
+        </ButtonTemplate>
+    </MudFileUpload>
+</div>
+
