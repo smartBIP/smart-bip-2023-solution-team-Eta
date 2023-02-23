@@ -364,3 +364,8 @@ FodyWeavers.xsd
 
 # Data folders
 data/
+
+# Images
+*.jpeg
+*.jpg
+*.png
