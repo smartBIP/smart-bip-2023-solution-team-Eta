@@ -1,5 +1,6 @@
 # Proof-of-Concept Joensuu Automation
 ## Description
+This project was developed as a Proof-of-Concept for the city of Joensuu. The project is intended as an extension to an already existing app. It demonstrates the possibilities of AI within the already existing feedback loop currently implemented in the app.
 
 ## Used Packages
 ### API
